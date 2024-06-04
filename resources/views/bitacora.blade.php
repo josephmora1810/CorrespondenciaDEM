@@ -16,7 +16,10 @@
                     Usuarios Registrados 
                 </h2>
             </div>
+            <a href="{{ route('bitacora.pdf') }}" class="btn btn-primary btn-lg"><i data-feather="mail"></i>->Imprimir Bitacora</a>
+
             <div class="report-box-2 intro-y mt-12 sm:mt-5">
+
                 <div class="box sm:flex">
                     
                     <div class="px-12 py-12 flex flex-col justify-center flex-1 border-t sm:border-t-0 sm:border-l border-gray-300 dark:border-dark-5 border-dashed">
@@ -48,7 +51,9 @@
                         <div>{{ $bitacoras ?? ''->links() }}</div>
                     </div>
                 </div>
+
             </div>
+
         </div>
         <!-- END: General Report -->
 

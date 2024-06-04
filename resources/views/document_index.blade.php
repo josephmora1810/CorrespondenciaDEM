@@ -19,20 +19,20 @@
             <div class="report-box-2 intro-y mt-12 sm:mt-5">
                 <div class="box sm:flex">
                     <div class="px-8 py-12 flex flex-col flex-1">
-                        <form method="post" action="">
+                        <form method="POST" action="{{ route('store.document') }}">
                         @csrf
                        
                         <div class="mt-3"> 
                             <label for="vertical-form-1" class="form-label">Nombre</label> 
                             <input name="nombre" type="text" class="form-control" placeholder="Añadir Nombre del Documento"> 
-                            @error('cat_name')
+                            @error('nombre')
                             <div class="text-danger">{{$message}}</div>
                             @enderror
                         </div>
                         <div class="mt-3"> 
                             <label for="vertical-form-1" class="form-label">Cuerpo</label> 
                             <textarea name="cuerpo" type="text" class="form-control" placeholder="Añadir cuerpo del Documento" rows="6"></textarea>
-                            @error('cat_name')
+                            @error('cuerpo')
                             <div class="text-danger">{{$message}}</div>
                             @enderror
                         </div>

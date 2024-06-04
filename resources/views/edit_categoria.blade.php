@@ -18,12 +18,16 @@
             <div class="report-box-2 intro-y mt-12 sm:mt-5">
                 <div class="box sm:flex">
                     <div class="px-8 py-12 flex flex-col flex-1">
-                        <form method="post" action="" enctype="multipart/form-data">
+                        <form method="post" action="{{ route('document.update') }}" enctype="multipart/form-data">
                         @csrf
                         <!-- <input type="hidden" name="_token" value="6Ldd7PNeo17vptphd3D8u1jUy127s9xlMffdS4bY"> -->
                         
-                        <input type="hidden" name="id" value="{{$documento->numero}}">
-                        <div> <label for="vertical-form-1" class="form-label">Add Category name</label> <input id="category_name" name="category_name" value="{{$documento->receptor}}" type="text" required="" class="form-control" placeholder="Add category"> </div>
+                        <input type="hidden" name="id" value="{{$categoria->id}}">
+
+                        <div> <label for="vertical-form-1" class="form-label">Nombre</label><input id="nombre" name="nombre" value="{{$categoria->nombre}}" type="text" required="" class="form-control" placeholder="Edite el nombre del documento"> </div>
+
+                        <div> <label for="vertical-form-1" class="form-label">Nombre</label><input id="cuerpo" name="cuerpo" value="{{$categoria->cuerpo}}" type="text" required="" class="form-control" placeholder="Edite el cuerpo del documento"> </div>
+
                         <div class="intro-x mt-5 xl:mt-8 text-center xl:text-left">
                             <button class="btn btn-primary py-3 px-4 w-full xl:w-32 xl:mr-3 align-top">Submit</button>
                             <br><br>

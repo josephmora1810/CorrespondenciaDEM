@@ -19,22 +19,18 @@
             <div class="report-box-2 intro-y mt-12 sm:mt-5">
                 <div class="box sm:flex">
                     <div class="px-8 py-12 flex flex-col flex-1">
-                        <form method="post" action="">
+                        <form method="post" action="{{ route('store.gestor') }}">
                         @csrf
                        
                         <div class="mt-3"> 
-                            <label for="vertical-form-1" class="form-label">Añadir</label> 
-                            <input name="cat_name" type="text" class="form-control" placeholder="Add category"> 
-                            @error('cat_name')
-                            <div class="text-danger">{{$message}}</div>
-                            @enderror
+                            <label for="vertical-form-1" class="form-label">Nombre Gestor</label> 
+                            <input name="nombre" type="text" class="form-control" placeholder="Inserte el Nombre del Gestor"> 
+                            
                         </div>
                         <div class="mt-3"> 
-                            <label for="vertical-form-1" class="form-label">Añadir</label> 
-                            <textarea name="cat_name" type="text" class="form-control" placeholder="Add category" rows="6"></textarea>
-                            @error('cat_name')
-                            <div class="text-danger">{{$message}}</div>
-                            @enderror
+                            <label for="vertical-form-1" class="form-label">Cedula Gestor</label> 
+                            <input name="cedula" type="text" class="form-control" placeholder="Inserte cedula del Gestor"> 
+                            
                         </div>
                         <div class="intro-x mt-5 xl:mt-8 text-center xl:text-left">
                             <button class="btn btn-primary py-3 px-4 w-full xl:w-32 xl:mr-3 align-top">Submit</button>
@@ -63,11 +59,11 @@
                                     <td class="border-b dark:border-dark-5">{{$gestor->nombre}}</td>
                                     <td class="border-b dark:border-dark-5">{{$gestor->cedula}}</td>
                                     <td class="border-b dark:border-dark-5">
-                                    <a href="{{url('editcat')}}/{{$gestor->id}}">
+                                    <a href="{{url('editgestor')}}/{{$gestor->id}}">
                                         <i data-feather="edit" style="color:green;"></i>
                                     </a>
                                     |
-                                    <a onclick="return confirm('Do you want to delete it')" href="{{url('/cat/destroy/')}}/{{$gestor->id}}">
+                                    <a onclick="return confirm('Do you want to delete it')" href="{{url('/gestor/destroy/')}}/{{$gestor->id}}">
                                         <i data-feather="delete" style="color:red;"></i>
                                     </a>
                                     </td>
